@@ -69,7 +69,7 @@ sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua."
 str
 cat(str) #" to use line breaks as it is"
-nchar(str)
+nchar(str)  # length of stringsss....
 grepl("h",str)
 grepl('a',str)
 #escape characters in R programing....
@@ -123,7 +123,7 @@ e
 10 |5 # element wise logical or
 0|1
 0||1
-10 ! 5
+!5
 !10
 !0
 # Other intresting operationss...
@@ -307,4 +307,275 @@ my_function <- function() {
 my_function()
 
 paste("R is", txt)
+# Vectors in R Programmm...
+fruits <- c("banana", "apple", "orange")
 
+# Print fruits
+fruits
+
+numbers <- 1:10
+numbers
+numbers1 <- 1.5:6.5 # numerical decimals in sequenceee
+numbers1
+numbers2 <- 1.5:6.3 # numerical decimals in sequence where you  wont get last element
+numbers2
+fruits <- c("banana", "apple", "orange")
+length(fruits)
+# sorting The R vector..
+fruits <- c("banana", "apple", "orange", "mango", "lemon")
+numbers <- c(13, 3, 5, 7, 20, 2)
+sort(fruits)  # Sort a string
+sort(numbers) # Sort numbers
+fruits <- c("banana", "apple", "orange")
+# Access the first item (banana)
+fruits[1]
+fruits <- c("banana", "apple", "orange", "mango", "lemon")
+# Access the first and third item (banana and orange)
+fruits[c(1,3)]
+# Access all items except for the first item
+fruits[c(-1)]
+# changing "banana" to "pear"
+fruits[1] <- 'pear'
+fruits
+#To repeat vectors ,use the rep() function:
+repeat_each <- rep(c(1,2,3), each =3)
+repeat_each
+# to repeat the sequence of the vector
+repeat_each <- rep(c(1,2,3), times =3)
+repeat_each
+# generating sequenced vectors
+numbers <- 1:10
+numbers
+numbers <- seq(from =0,to =100,by =20)
+numbers
+## The seq() function has three parameters: from is where the sequence starts, 
+#to is where the sequence stops, 
+#and by is the interval of the sequence.
+# list can contain different data types inside it unlike the vectorss..
+list1 <-list("apple","banana","cherry")
+list1
+# accesing the list item..
+list1 <-list('apple','banana','cherry')
+list1[1]
+# changing the list valueeee....
+thislist <- list("apple", "banana", "cherry")
+thislist[1] <- "blackcurrant"
+# Print the updated list
+thislist
+#list length
+thislist <- list("apple", "banana", "cherry")
+length(thislist)
+#checking if the element is in the list.
+thislist <- list("apple", "banana", "cherry")
+"apple" %in% thislist
+# adding the list items
+thislist <- list("apple", "banana", "cherry")
+append(thislist, "orange")
+# adding elements after a specified index
+thislist <- list("apple", "banana", "cherry")
+append(thislist,"orange",after=2)
+# removing of apple from the list....
+thislist <- list("apple", "banana", "cherry")
+newlist <- thislist[-1]
+# Print the new list
+newlist
+#range of indexes..
+thislist <- list("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+thislist[2:5]
+#looping through the listsss..
+thislist <- list("apple", "banana", "cherry")
+
+for (x in thislist) {
+  print(x)
+}
+thislist
+#joining of two lists..
+list1 <- list("a", "b", "c")
+list2 <- list(1,2,3)
+list3 <-c(list1,list2)
+list3
+#............................................................
+# matrices in R
+thismatrix <-matrix(c('apple','banana','cherry','orange'),nrow=2,ncol =2)
+thismatrix
+
+#Access Matrix Items....
+thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+
+thismatrix[1, 2]
+
+# Accesing whole rows after comma
+thismatrix <-matrix(c("apple","banana","cherry",'orange'),nrow =2 ,ncol=2)
+thismatrix[2,]
+#Accesing more than one row
+thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+thismatrix[c(1,2),]
+# Accesing more than one columns
+thismatrix[, c(1,2)]
+#Adding columns using cbind()
+thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+newmatrix <-cbind(thismatrix,c('strawberry','blueberry','raspberry'))
+newmatrix
+#Addding new columns using rbind()
+newmatrix1 <-rbind(thismatrix,c('stawberry','blueberry','raspberry'))
+newmatrix1
+#removing rows and columns from the matrix..
+thismatrix <- matrix(c("apple", "banana", "cherry", "orange", "mango", "pineapple"), nrow = 3, ncol =2)
+#Remove the first row and the first column
+thismatrix <- thismatrix[-c(1),-c(1)]
+thismatrix
+#chcking an element existsss.......
+thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+
+"apple" %in% thismatrix
+#number of rows and columns in a matrix.....
+thismatrix <-matrix(c('apple','banana','cherry','orange'),nrow=2,ncol=2)
+dim(thismatrix)
+length(thismatrix)
+# looping through the matrices:
+thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+
+for (rows in 1:nrow(thismatrix)) {
+  for (columns in 1:ncol(thismatrix)) {
+    print(thismatrix[rows, columns])
+  }
+}
+# Combine matrices
+Matrix1 <- matrix(c("apple", "banana", "cherry", "grape"), nrow = 2, ncol = 2)
+Matrix2 <- matrix(c("orange", "mango", "pineapple", "watermelon"), nrow = 2, ncol = 2)
+
+# Adding it as a rows
+Matrix_Combined <- rbind(Matrix1, Matrix2)
+Matrix_Combined
+
+# Adding it as a columns
+Matrix_Combined <- cbind(Matrix1, Matrix2)
+Matrix_Combined
+#Arrays.............
+thisarray <- c(1:24)
+thisarray
+multiarray <- array(thisarray,dim = c(4,3,2))
+multiarray
+#dim=c(4,3,2) work?
+#The first and second number in the bracket 
+#specifies the amount of rows and columns.
+#The last number in the bracket specifies 
+#how many dimensions we want.
+#Note: Arrays can only have one data type.
+#.........................................................
+# Accesing array items...
+thisarray <- c(1:24)
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+
+multiarray[2, 3, 2]
+#another way using c()
+thisarray <- c(1:24)
+# Access all the items from the first row from matrix one
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+multiarray[c(1),,1]
+# Access all the items from the first column from matrix one
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+multiarray[,c(1),1]
+#--->A comma (,) before c() means that we want to access the column.
+#--->A comma (,) after c() means that we want to access the row.
+dim(multiarray)
+length(multiarray)
+#looping through arrays
+for (x in multiarray){
+  print(x)
+}
+# DAta Frames 
+#arrays of columns attached into a table.
+Data_frame <- data.frame(
+  training = c('strength','stamina','other'),
+  pulse = c(100,150,120),
+  Duration = c(60,30,45)
+)
+Data_frame
+#Summarize the dataframe.........
+summary(Data_frame)
+#Accesing of items..
+Data_frame[1]
+Data_frame[['training']]
+Data_frame$training
+#Add Rows
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+New_row_DF <-rbind(Data_Frame,c('strength',110,110))
+New_row_DF
+#ADD columns
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Add a new column
+New_col_DF <- cbind(Data_Frame, Steps = c(1000, 6000, 2000))
+
+# Print the new column
+New_col_DF
+# REmoving Rows and columns...
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Remove the first row and column
+Data_Frame_New <- Data_Frame[c(-1),c(-1)]
+
+# Print the new data frame
+Data_Frame_New
+##dimension of DataFrame...
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+dim(Data_frame)
+ncol(Data_frame)
+nrow(Data_frame)
+length(Data_frame)
+#................
+#combinig dataFrames..
+Data_Frame1 <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+Data_Frame2 <- data.frame (
+  Training = c("Stamina", "Stamina", "Strength"),
+  Pulse = c(140, 150, 160),
+  Duration = c(30, 30, 20)
+)
+
+New_Data_Frame <- rbind(Data_Frame1, Data_Frame2)
+New_Data_Frame
+New_Data_Framec <-cbind(Data_Frame1,Data_Frame2)
+New_Data_Framec
+#FActors in R are used to categorize the vectors
+# Create a factor
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+
+# Print the factor
+music_genre
+# levels()
+levels(music_genre)
+#..........
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"), levels = c("Classic", "Jazz", "Pop", "Rock", "Other"))
+levels(music_genre)
+#length........................
+length(music_genre)
+# accesing factors...
+music_genre[1]
+music_genre[-1]
+music_genre[0:-4]
+# changing values..
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+music_genre[3] <- "Pop"
+music_genre[3]
