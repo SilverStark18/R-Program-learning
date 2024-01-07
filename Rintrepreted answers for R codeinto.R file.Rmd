@@ -1,0 +1,1359 @@
+---
+title: "R intrepred answers for  R intro code.R"
+author: "Amarnath"
+date: "2024-01-07"
+output: html_document
+---
+print("hello World,This is Amar")
+[1] "hello World,This is Amar"
+> for (x in 1:10) {
++   print(x)
++ }
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+> # printing variables
+> name <- "Amar"
+> name
+[1] "Amar"
+> # concatenation in R 
+> text <- "I Love Marvel Cinematic Universe"
+> # paste is used to concatenate the two strings..
+> paste(" Hello",text)
+[1] " Hello I Love Marvel Cinematic Universe"
+>  # we can also use , operator to add another variable...
+> paste(name,text)
+[1] "Amar I Love Marvel Cinematic Universe"
+> paste(name,"-->",text)
+[1] "Amar --> I Love Marvel Cinematic Universe"
+> # multiple variables in  R programing...
+> a <- b <- c <- "A=B=C"
+> a # all three variables point to a single value...
+[1] "A=B=C"
+> b
+[1] "A=B=C"
+> c
+[1] "A=B=C"
+> # legal variable names ...
+> myvar <- 'Amar'
+> my_var <- "amar" # we can use underscores at middle not at starting point
+> myvar_ <- 'a'
+> myVar <- 'B' # can use capital letter in between..
+> MyVAR <- 'c' 
+> .myVAr2 <- 'This is also suitable'
+> # reeserved variables cannot be variables and variables are also case sensitive..
+> # DataTypes in R 
+> #numeric - (10.5, 58, 787)
+> #integer - (1L, 57L, 108L, where the letter "L" declares this as an integer)
+> #complex - (9 + 7i, where "i" is the imaginary part)
+> #character (a.k.a. string) - ("k", "R is exciting", "FALSE", "11.5")
+> #logical (a.k.a. boolean) - (TRUE or FALSE)
+> x <- 10.5
+> class(x) # class function is used to check datatype of variable..
+[1] "numeric"
+> x <- 1000L
+> class(x)
+[1] "integer"
+> x <- 9i +3
+> class(x)
+[1] "complex"
+> x <- "R is Good"
+> class(x)
+[1] "character"
+> x <- TRUE
+> class(x)
+[1] "logical"
+> # Type Conversion...
+> x <- 1L
+> y <-2 
+> a <- as.numeric(x)
+> class(a)
+[1] "numeric"
+> b <- as.integer(y)
+> class(b)
+[1] "integer"
+> # simple math functions in R language...
+> 10+5
+[1] 15
+> 10-5
+[1] 5
+> max(5,10,16)
+[1] 16
+> min(0,1,-1)
+[1] -1
+> sqrt(256)
+[1] 16
+> abs(-4.7)
+[1] 4.7
+> ceiling(1.4)
+[1] 2
+> floor(1.5)
+[1] 1
+> str <- "Lorem ipsum dolor sit amet,
++ consectetur adipiscing elit,
++ sed do eiusmod tempor incididunt
++ ut labore et dolore magna aliqua."
+> str
+[1] "Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod tempor incididunt\nut labore et dolore magna aliqua."
+> cat(str) #" to use line breaks as it is"
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+> nchar(str)  # length of stringsss....
+[1] 123
+> grepl("h",str)
+[1] FALSE
+> grepl('a',str)
+[1] TRUE
+> #escape characters in R programing....
+> str <- "We are the so-called \"\n\",from asgard."
+> str
+[1] "We are the so-called \"\n\",from asgard."
+> cat(str) # use cat functions for proper functions..implementation of escape characters..
+We are the so-called "
+",from asgard.
+> # logical operations..
+> 10 > 9
+[1] TRUE
+> 10 == 9
+[1] FALSE
+> 10< 9
+[1] FALSE
+> # code using if condition...
+> a <- 200
+> b <- 33
+> if (b > a) {
++   print ("b is greater than a")
++ } else {
++   print("b is not greater than a")
++ }
+[1] "b is not greater than a"
+> #arithmetic operators
+> a <- 10
+> b = 5
+> a+b
+[1] 15
+> a-b
+[1] 5
+> a*b
+[1] 50
+> a/b
+[1] 2
+> a ^ b
+[1] 1e+05
+> a ^ 2
+[1] 100
+> a %% b # modulo division gives remainder of the division operation
+[1] 0
+> a%/%b # integer division  gives  ---> quotient of the division 
+[1] 2
+> # R assignment operators
+> a <- 3
+> b <<- 4 # <<- is a global assigner
+> 04 -> d
+> 045 ->> e
+> a
+[1] 3
+> b
+[1] 4
+> b <-2
+> d
+[1] 4
+> e
+[1] 45
+> # R comparision operators 
+> 10 == 2 
+[1] FALSE
+> 10 != 2
+[1] TRUE
+> 10 >2 
+[1] TRUE
+> 10<2
+[1] FALSE
+> 10 >=2
+[1] TRUE
+> 10<= 2
+[1] FALSE
+> # R logical operators
+>  10 &5 # element wise logical and 
+[1] TRUE
+> 10&&5 
+[1] TRUE
+> 10 |5 # element wise logical or
+[1] TRUE
+> 0|1
+[1] TRUE
+> 0||1
+[1] TRUE
+> !5
+[1] FALSE
+> !10
+[1] FALSE
+> !0
+[1] TRUE
+> # Other intresting operationss...
+> x <- 1:10 #Creates a  series of numbers in a sequence
+> x
+ [1]  1  2  3  4  5  6  7  8  9 10
+> 1 %in% x # find out if an element belongs to a vector..
+[1] TRUE
+> a <- 33
+> b <- 33
+> if (b > a) {
++   print("b is greater than a")
++ } else if (a == b) {
++   print ("a and b are equal")
++ }
+[1] "a and b are equal"
+> a <- 200
+> b <- 33
+> if (b > a) {
++   print("b is greater than a")
++ } else if (a == b) {
++   print("a and b are equal")
++ } else {
++   print("a is greater than b")
++ }
+[1] "a is greater than b"
+> # Nested if statements...
+> x <- 41
+> if (x > 10) {
++   print("Above ten")
++   if (x > 20) {
++     print("and also above 20!")
++   } else {
++     print("but not above 20.")
++   }
++ } else {
++   print("below 10.")
++ }
+[1] "Above ten"
+[1] "and also above 20!"
+> # and condition
+> a <- 200
+> b <- 33
+> c <- 500
+> if (a > b & c > a) {
++   print("Both conditions are true")
++ }
+[1] "Both conditions are true"
+> # or condition
+> a <- 200
+> b <- 33
+> c <- 500
+> if (a > b | a > c) {
++   print("At least one of the conditions is true")
++ }
+[1] "At least one of the conditions is true"
+> # R while loop..
+> i <-1 
+> while(i<6) {
++   print(i)
++   i <- i+1
++ }
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+> # break stmt in while loop..
+> i <- 1
+> while (i < 6) {
++   print(i)
++   i <- i + 1
++   if (i == 4) {
++     break
++   }
++ }
+[1] 1
+[1] 2
+[1] 3
+> # next stmt similar to continue stmt in python where we skip an iteration...
+> i <- 0
+> while (i < 6) {
++   i <- i + 1
++   if (i == 3) {
++     next
++   }
++   print(i)
++ }
+[1] 1
+[1] 2
+[1] 4
+[1] 5
+[1] 6
+> # ......
+> dice <- 1
+> while (dice <= 6) {
++   if (dice < 6) {
++     print("No six")
++   } else {
++     print("six!")
++   }
++   dice <- dice + 1
++ }
+[1] "No six"
+[1] "No six"
+[1] "No six"
+[1] "No six"
+[1] "No six"
+[1] "six!"
+> # R for loop >>>>....
+> for (x in 1:10) {
++   print(x)
++ }
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+> # ... .. .. ....... .. .. 
+> fruits <- list('apple','banana','cherry')
+> for (x in fruits) {
++   print(x)
++ }
+[1] "apple"
+[1] "banana"
+[1] "cherry"
+> #...... .. .. ....... ...
+> dice <- c(1, 2, 3, 4, 5, 6)
+> for (x in dice) {
++   print(x)
++ }
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+> # Nested loops in R ..........................
+> adj <- list("red", "big", "tasty")
+> fruits <- list("apple", "banana", "cherry")
+> for (x in adj) {
++   for (y in fruits) {
++     print(paste(x, y))
++   }
++ }
+[1] "red apple"
+[1] "red banana"
+[1] "red cherry"
+[1] "big apple"
+[1] "big banana"
+[1] "big cherry"
+[1] "tasty apple"
+[1] "tasty banana"
+[1] "tasty cherry"
++   for (y in fruits) {
++     print(paste(x, y))
++   }
++ }
+[1] "red apple"
+[1] "red banana"
+[1] "red cherry"
+[1] "big apple"
+[1] "big banana"
+[1] "big cherry"
+[1] "tasty apple"
+[1] "tasty banana"
+[1] "tasty cherry"
+
+>  # Functions in R .......................
+> my_function <-function()
++ {
++   # create a function with the name my_function
++   print("Hello World!") .... [TRUNCATED] 
+
+> # callling a functionnn
+> my_function()
+[1] "Hello World!"
+
+> # we can also pass argumentss....
+> my_function <- function(fname){
++   paste(fname,"Raj")
++ }
+
+> my_function('Ravi')
+[1] "Ravi Raj"
+
+> my_function("Rama")
+[1] "Rama Raj"
+
+> my_function("Anthony")
+[1] "Anthony Raj"
+
+> #  passing >1 arguments
+> my_function <- function(fname, lname) {
++   paste(fname, lname)
++ }
+
+> my_function("Peter", "Griffin")
+[1] "Peter Griffin"
+
+> # default parameter value
+> my_function <- function(country = "Norway") {
++   paste("I am from", country)
++ }
+
+> my_function("Sweden")
+[1] "I am from Sweden"
+
+> my_function("India")
+[1] "I am from India"
+
+> my_function() # will get the default value, which is Norway
+[1] "I am from Norway"
+
+> my_function("USA")
+[1] "I am from USA"
+
+> # return valuesss.....
+> my_function <- function(x) {
++   return (5 * x)
++ }
+
+> print(my_function(3))
+[1] 15
+
+> print(my_function(5))
+[1] 25
+
+> print(my_function(9))
+[1] 45
+
+> # nested Function..
+> Nested_function <- function(x, y) {
++   a <- x + y
++   return(a)
++ }
+
+> Nested_function(Nested_function(2,2), Nested_function(3,3))
+[1] 10
+
+> # Explanation :
+> #The function tells x to add y.
+> #The first input Nested_function(2,2) is "x" of the main function.
+> #The second input Nested_fu .... [TRUNCATED] 
+
+> tri_recursion(6)
+[1] 1
+[1] 3
+[1] 6
+[1] 10
+[1] 15
+[1] 21
+
+>  # global assignment
+> txt <- "awesome"
+
+> my_function <- function() {
++   txt <<- "fantastic"
++   paste("R is", txt)
++ }
+
+> my_function()
+[1] "R is fantastic"
+
+> paste("R is", txt)
+[1] "R is fantastic"
+
+> # Vectors in R Programmm...
+> fruits <- c("banana", "apple", "orange")
+
+> # Print fruits
+> fruits
+[1] "banana" "apple"  "orange"
+
+> numbers <- 1:10
+
+> numbers
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+> numbers1 <- 1.5:6.5 # numerical decimals in sequenceee
+
+> numbers1
+[1] 1.5 2.5 3.5 4.5 5.5 6.5
+
+> numbers2 <- 1.5:6.3 # numerical decimals in sequence where you  wont get last element
+
+> numbers2
+[1] 1.5 2.5 3.5 4.5 5.5
+
+> fruits <- c("banana", "apple", "orange")
+
+> length(fruits)
+[1] 3
+
+> # sorting The R vector..
+> fruits <- c("banana", "apple", "orange", "mango", "lemon")
+
+> numbers <- c(13, 3, 5, 7, 20, 2)
+
+> sort(fruits)  # Sort a string
+[1] "apple"  "banana" "lemon"  "mango"  "orange"
+
+> sort(numbers) # Sort numbers
+[1]  2  3  5  7 13 20
+
+> fruits <- c("banana", "apple", "orange")
+
+> # Access the first item (banana)
+> fruits[1]
+[1] "banana"
+
+> fruits <- c("banana", "apple", "orange", "mango", "lemon")
+
+> # Access the first and third item (banana and orange)
+> fruits[c(1,3)]
+[1] "banana" "orange"
+
+> # Access all items except for the first item
+> fruits[c(-1)]
+[1] "apple"  "orange" "mango"  "lemon" 
+
+> # changing "banana" to "pear"
+> fruits[1] <- 'pear'
+
+> fruits
+[1] "pear"   "apple"  "orange" "mango"  "lemon" 
+
+> #To repeat vectors ,use the rep() function:
+> repeat_each <- rep(c(1,2,3), each =3)
+
+> repeat_each
+[1] 1 1 1 2 2 2 3 3 3
+
+> # to repeat the sequence of the vector
+> repeat_each <- rep(c(1,2,3), times =3)
+
+> repeat_each
+[1] 1 2 3 1 2 3 1 2 3
+
+> # generating sequenced vectors
+> numbers <- 1:10
+
+> numbers
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+> numbers <- seq(from =0,to =100,by =20)
+
+> numbers
+[1]   0  20  40  60  80 100
+
+> ## The seq() function has three parameters: from is where the sequence starts, 
+> #to is where the sequence stops, 
+> #and by is the interval of the .... [TRUNCATED] 
+
+> list1
+[[1]]
+[1] "apple"
+
+[[2]]
+[1] "banana"
+
+[[3]]
+[1] "cherry"
+
+
+> # accesing the list item..
+> list1 <-list('apple','banana','cherry')
+
+> list1[1]
+[[1]]
+[1] "apple"
+
+
+> # changing the list valueeee....
+> thislist <- list("apple", "banana", "cherry")
+
+> thislist[1] <- "blackcurrant"
+
+> # Print the updated list
+> thislist
+[[1]]
+[1] "blackcurrant"
+
+[[2]]
+[1] "banana"
+
+[[3]]
+[1] "cherry"
+
+
+> #list length
+> thislist <- list("apple", "banana", "cherry")
+
+> length(thislist)
+[1] 3
+
+> #checking if the element is in the list.
+> thislist <- list("apple", "banana", "cherry")
+
+> "apple" %in% thislist
+[1] TRUE
+
+> # adding the list items
+> thislist <- list("apple", "banana", "cherry")
+
+> append(thislist, "orange")
+[[1]]
+[1] "apple"
+
+[[2]]
+[1] "banana"
+
+[[3]]
+[1] "cherry"
+
+[[4]]
+[1] "orange"
+
+
+> # adding elements after a specified index
+> thislist <- list("apple", "banana", "cherry")
+
+> append(thislist,"orange",after=2)
+[[1]]
+[1] "apple"
+
+[[2]]
+[1] "banana"
+
+[[3]]
+[1] "orange"
+
+[[4]]
+[1] "cherry"
+
+
+> # removing of apple from the list....
+> thislist <- list("apple", "banana", "cherry")
+
+> newlist <- thislist[-1]
+
+> # Print the new list
+> newlist
+[[1]]
+[1] "banana"
+
+[[2]]
+[1] "cherry"
+
+
+> #range of indexes..
+> thislist <- list("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+
+> thislist[2:5]
+[[1]]
+[1] "banana"
+
+[[2]]
+[1] "cherry"
+
+[[3]]
+[1] "orange"
+
+[[4]]
+[1] "kiwi"
+
+
+> #looping through the listsss..
+> thislist <- list("apple", "banana", "cherry")
+
+> for (x in thislist) {
++   print(x)
++ }
+[1] "apple"
+[1] "banana"
+[1] "cherry"
+
+> thislist
+[[1]]
+[1] "apple"
+
+[[2]]
+[1] "banana"
+
+[[3]]
+[1] "cherry"
+
+
+> #joining of two lists..
+> list1 <- list("a", "b", "c")
+
+> list2 <- list(1,2,3)
+
+> list3 <-c(list1,list2)
+
+> list3
+[[1]]
+[1] "a"
+
+[[2]]
+[1] "b"
+
+[[3]]
+[1] "c"
+
+[[4]]
+[1] 1
+
+[[5]]
+[1] 2
+
+[[6]]
+[1] 3
+
+
+> #............................................................
+> # matrices in R
+> thismatrix <-matrix(c('apple','banana','cherry','orange'),nrow=2,n .... [TRUNCATED] 
+
+> thismatrix
+     [,1]     [,2]    
+[1,] "apple"  "cherry"
+[2,] "banana" "orange"
+
+> #Access Matrix Items....
+> thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+
+> thismatrix[1, 2]
+[1] "cherry"
+
+> # Accesing whole rows after comma
+> thismatrix <-matrix(c("apple","banana","cherry",'orange'),nrow =2 ,ncol=2)
+
+> thismatrix[2,]
+[1] "banana" "orange"
+
+> #Accesing more than one row
+> thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3,  .... [TRUNCATED] 
+
+> thismatrix[c(1,2),]
+     [,1]     [,2]     [,3]   
+[1,] "apple"  "orange" "pear" 
+[2,] "banana" "grape"  "melon"
+
+> # Accesing more than one columns
+> thismatrix[, c(1,2)]
+     [,1]     [,2]       
+[1,] "apple"  "orange"   
+[2,] "banana" "grape"    
+[3,] "cherry" "pineapple"
+
+> #Adding columns using cbind()
+> thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3 .... [TRUNCATED] 
+
+> newmatrix <-cbind(thismatrix,c('strawberry','blueberry','raspberry'))
+
+> newmatrix
+     [,1]     [,2]        [,3]    [,4]        
+[1,] "apple"  "orange"    "pear"  "strawberry"
+[2,] "banana" "grape"     "melon" "blueberry" 
+[3,] "cherry" "pineapple" "fig"   "raspberry" 
+
+> #Addding new columns using rbind()
+> newmatrix1 <-rbind(thismatrix,c('stawberry','blueberry','raspberry'))
+
+> newmatrix1
+     [,1]        [,2]        [,3]       
+[1,] "apple"     "orange"    "pear"     
+[2,] "banana"    "grape"     "melon"    
+[3,] "cherry"    "pineapple" "fig"      
+[4,] "stawberry" "blueberry" "raspberry"
+
+> #removing rows and columns from the matrix..
+> thismatrix <- matrix(c("apple", "banana", "cherry", "orange", "mango", "pineapple"), nrow = 3, ncol = .... [TRUNCATED] 
+
+> #Remove the first row and the first column
+> thismatrix <- thismatrix[-c(1),-c(1)]
+
+> thismatrix
+[1] "mango"     "pineapple"
+
+> #chcking an element existsss.......
+> thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+
+> "apple" %in% thismatrix
+[1] TRUE
+
+> #number of rows and columns in a matrix.....
+> thismatrix <-matrix(c('apple','banana','cherry','orange'),nrow=2,ncol=2)
+
+> dim(thismatrix)
+[1] 2 2
+
+> length(thismatrix)
+[1] 4
+
+> # looping through the matrices:
+> thismatrix <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+
+> for (rows in 1:nrow(thismatrix)) {
++   for (columns in 1:ncol(thismatrix)) {
++     print(thismatrix[rows, columns])
++   }
++ }
+[1] "apple"
+[1] "cherry"
+[1] "banana"
+[1] "orange"
+
+> # Combine matrices
+> Matrix1 <- matrix(c("apple", "banana", "cherry", "grape"), nrow = 2, ncol = 2)
+
+> Matrix2 <- matrix(c("orange", "mango", "pineapple", "watermelon"), nrow = 2, ncol = 2)
+
+> # Adding it as a rows
+> Matrix_Combined <- rbind(Matrix1, Matrix2)
+
+> Matrix_Combined
+     [,1]     [,2]        
+[1,] "apple"  "cherry"    
+[2,] "banana" "grape"     
+[3,] "orange" "pineapple" 
+[4,] "mango"  "watermelon"
+
+> # Adding it as a columns
+> Matrix_Combined <- cbind(Matrix1, Matrix2)
+
+> Matrix_Combined
+     [,1]     [,2]     [,3]     [,4]        
+[1,] "apple"  "cherry" "orange" "pineapple" 
+[2,] "banana" "grape"  "mango"  "watermelon"
+
+> #Arrays.............
+> thisarray <- c(1:24)
+
+> thisarray
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+[24] 24
+
+> multiarray <- array(thisarray,dim = c(4,3,2))
+
+> multiarray
+, , 1
+
+     [,1] [,2] [,3]
+[1,]    1    5    9
+[2,]    2    6   10
+[3,]    3    7   11
+[4,]    4    8   12
+
+, , 2
+
+     [,1] [,2] [,3]
+[1,]   13   17   21
+[2,]   14   18   22
+[3,]   15   19   23
+[4,]   16   20   24
+
+
+> #dim=c(4,3,2) work?
+> #The first and second number in the bracket 
+> #specifies the amount of rows and columns.
+> #The last number in the bracket sp .... [TRUNCATED] 
+
+> multiarray <- array(thisarray, dim = c(4, 3, 2))
+
+> multiarray[2, 3, 2]
+[1] 22
+
+> #another way using c()
+> thisarray <- c(1:24)
+
+> # Access all the items from the first row from matrix one
+> multiarray <- array(thisarray, dim = c(4, 3, 2))
+
+> multiarray[c(1),,1]
+[1] 1 5 9
+
+> # Access all the items from the first column from matrix one
+> multiarray <- array(thisarray, dim = c(4, 3, 2))
+
+> multiarray[,c(1),1]
+[1] 1 2 3 4
+
+> #--->A comma (,) before c() means that we want to access the column.
+> #--->A comma (,) after c() means that we want to access the row.
+> dim(multia .... [TRUNCATED] 
+[1] 4 3 2
+
+> length(multiarray)
+[1] 24
+
+> #looping through arrays
+> for (x in multiarray){
++   print(x)
++ }
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+[1] 11
+[1] 12
+[1] 13
+[1] 14
+[1] 15
+[1] 16
+[1] 17
+[1] 18
+[1] 19
+[1] 20
+[1] 21
+[1] 22
+[1] 23
+[1] 24
+
+> # DAta Frames 
+> #arrays of columns attached into a table.
+> Data_frame <- data.frame(
++   training = c('strength','stamina','other'),
++   pulse = c .... [TRUNCATED] 
+
+> Data_frame
+  training pulse Duration
+1 strength   100       60
+2  stamina   150       30
+3    other   120       45
+
+> #Summarize the dataframe.........
+> summary(Data_frame)
+   training             pulse          Duration   
+ Length:3           Min.   :100.0   Min.   :30.0  
+ Class :character   1st Qu.:110.0   1st Qu.:37.5  
+ Mode  :character   Median :120.0   Median :45.0  
+                    Mean   :123.3   Mean   :45.0  
+                    3rd Qu.:135.0   3rd Qu.:52.5  
+                    Max.   :150.0   Max.   :60.0  
+
+> #Accesing of items..
+> Data_frame[1]
+  training
+1 strength
+2  stamina
+3    other
+
+> Data_frame[['training']]
+[1] "strength" "stamina"  "other"   
+
+> Data_frame$training
+[1] "strength" "stamina"  "other"   
+
+> #Add Rows
+> Data_Frame <- data.frame (
++   Training = c("Strength", "Stamina", "Other"),
++   Pulse = c(100, 150, 120),
++   Duration = c(60, 30, 45)
+ .... [TRUNCATED] 
+
+> New_row_DF <-rbind(Data_Frame,c('strength',110,110))
+
+> New_row_DF
+  Training Pulse Duration
+1 Strength   100       60
+2  Stamina   150       30
+3    Other   120       45
+4 strength   110      110
+
+> #ADD columns
+> Data_Frame <- data.frame (
++   Training = c("Strength", "Stamina", "Other"),
++   Pulse = c(100, 150, 120),
++   Duration = c(60, 30, 4 .... [TRUNCATED] 
+
+> # Add a new column
+> New_col_DF <- cbind(Data_Frame, Steps = c(1000, 6000, 2000))
+
+> # Print the new column
+> New_col_DF
+  Training Pulse Duration Steps
+1 Strength   100       60  1000
+2  Stamina   150       30  6000
+3    Other   120       45  2000
+
+> # REmoving Rows and columns...
+> Data_Frame <- data.frame (
++   Training = c("Strength", "Stamina", "Other"),
++   Pulse = c(100, 150, 120),
++   Dura .... [TRUNCATED] 
+
+> # Remove the first row and column
+> Data_Frame_New <- Data_Frame[c(-1),c(-1)]
+
+> # Print the new data frame
+> Data_Frame_New
+  Pulse Duration
+2   150       30
+3   120       45
+
+> ##dimension of DataFrame...
+> Data_Frame <- data.frame (
++   Training = c("Strength", "Stamina", "Other"),
++   Pulse = c(100, 150, 120),
++   Duratio .... [TRUNCATED] 
+
+> dim(Data_frame)
+[1] 3 3
+
+> ncol(Data_frame)
+[1] 3
+
+> nrow(Data_frame)
+[1] 3
+
+> length(Data_frame)
+[1] 3
+
+> #................
+> #combinig dataFrames..
+> Data_Frame1 <- data.frame (
++   Training = c("Strength", "Stamina", "Other"),
++   Pulse = c(100, 150, 1 .... [TRUNCATED] 
+
+> Data_Frame2 <- data.frame (
++   Training = c("Stamina", "Stamina", "Strength"),
++   Pulse = c(140, 150, 160),
++   Duration = c(30, 30, 20)
++ )
+
+> New_Data_Frame <- rbind(Data_Frame1, Data_Frame2)
+
+> New_Data_Frame
+  Training Pulse Duration
+1 Strength   100       60
+2  Stamina   150       30
+3    Other   120       45
+4  Stamina   140       30
+5  Stamina   150       30
+6 Strength   160       20
+
+> New_Data_Framec <-cbind(Data_Frame1,Data_Frame2)
+
+> New_Data_Framec
+  Training Pulse Duration Training Pulse Duration
+1 Strength   100       60  Stamina   140       30
+2  Stamina   150       30  Stamina   150       30
+3    Other   120       45 Strength   160       20
+
+> #FActors in R are used to categorize the vectors
+> # Create a factor
+> music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz",  .... [TRUNCATED] 
+
+> # Print the factor
+> music_genre
+[1] Jazz    Rock    Classic Classic Pop     Jazz    Rock    Jazz   
+Levels: Classic Jazz Pop Rock
+
+> # levels()
+> levels(music_genre)
+[1] "Classic" "Jazz"    "Pop"     "Rock"   
+
+> #..........
+> music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"), levels = c("Classic", "Jazz", "Pop", "Ro ..." ... [TRUNCATED] 
+
+> levels(music_genre)
+[1] "Classic" "Jazz"    "Pop"     "Rock"    "Other"  
+
+> #length........................
+> length(music_genre)
+[1] 8
+
+> # accesing factors...
+> music_genre[1]
+[1] Jazz
+Levels: Classic Jazz Pop Rock Other
+
+> music_genre[-1]
+[1] Rock    Classic Classic Pop     Jazz    Rock    Jazz   
+Levels: Classic Jazz Pop Rock Other
+
+> music_genre[0:-4]
+[1] Pop  Jazz Rock Jazz
+Levels: Classic Jazz Pop Rock Other
+
+> # changing values..
+> music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+
+> music_genre[3] <- "Pop"
+
+> music_genre[3]
+[1] Pop
+Levels: Classic Jazz Pop Rock
+
+> #................../////////////////////............................................................................................................ .... [TRUNCATED] 
+
+> plot(c(1,8),c(3,10)) #Rplot-2 -plots --1,3 and 8,10
+
+> plot(c(1,2,3,4,5),c(3,7,8,9,12)) #Rplot 3
+
+> #another way of doing this..
+> x <- c(1, 2, 3, 4, 5)
+
+> y <- c(3, 7, 8, 9, 12)
+
+> plot(x,y) # similar to Rplot3
+
+> #Sequence of points
+> plot(1:10) # Rplot4
+
+> #plotting a line
+> plot(1:10,type="l") #Rplot-5
+
+> #adding the labelss
+> plot(1:10,main="My Graph",xlab ="The x-axis",ylab="The y axis") #Rplot-6
+
+> #Adding colors
+> plot(1:10,col ="red") #Rplot-7
+
+> #Use cex=number to change the size of the points (1 is default, while 0.5 means 50% smaller, and 2 means 100% larger):
+> plot(1:10,cex=2) #Rplot-8
+
+> #point Shape
+> #Use pch with a value from 0 to 25 to change the point shape format:
+> plot(1:10,pch=25,cex=2)#Rplot -9
+
+> #pch have different values u can try different shapesss...
+> #...................................................................................... .... [TRUNCATED] 
+
+> plot(1:10,type="l",col="blue")#lineplots-2
+
+> plot(1:10,type="l",lwd=2)# lineplots-3
+
+> #line stylesss
+> plot(1:10,type="l",lwd=5,lty=3)
+
+> #Available parameter values for lty:
+>   
+> # 0 removes the line
+> # 1 displays a solid line
+> # 2 displays a dashed line
+> # 3 displays a dotted li .... [TRUNCATED] 
+
+> line2 <-c(2,5,7,8,9,10,11,18)
+
+> plot(line1,type="l",col ='blue')
+
+> lines(line2,type="l",col = "red")
+
+> #.......................................................
+> x <- c(5,7,8,7,2,2,9,4,11,12,9,6)
+
+> y <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+
+> plot(x, y,col="orange",main="Observation of Cars", xlab="Car age", ylab="Car speed")
+
+> #......................................................................................................
+> # compare the carsss
+> # day one, the age  .... [TRUNCATED] 
+
+> y1 <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+
+> # day two, the age and speed of 15 cars:
+> x2 <- c(2,2,8,1,15,8,12,9,7,3,11,4,7,14,12)
+
+> y2 <- c(100,105,84,105,90,99,90,95,94,100,79,112,91,80,85)
+
+> plot(x1, y1, main="Observation of Cars", xlab="Car age", ylab="Car speed", col="red", cex=2)
+
+> points(x2, y2, col="blue", cex=2) # using points you are adding into same plotss..
+
+> #pie charts
+> x <-c(010,20,30,40)
+
+> pie(x)
+
+> # Create a vector of pies
+> x <- c(10,20,30,40)
+
+> # Display the pie chart and start the first pie at 90 degrees
+> pie(x,init.angle=90)
+
+> # labels
+> x <-c(10,20,30,40)
+
+> mylabel <- c("apples","banana",'cherries','dates')
+
+> pie(x,label=mylabel,main = "fruits")
+
+> #..................................................................
+> # pie chart with colors
+> colors <- c("red", "yellow", "pink", "brown")
+
+> pie(x,label=mylabel,main="fruits",col=colors)
+
+> #..................................................................
+> #to display legend to explain the contents clearly .....
+> legend("bottomright ..." ... [TRUNCATED] 
+
+> #The legend can be positioned as either:
+> #bottomright, bottom, bottomleft, left, topleft, top, topright, right, center
+> #........................ .... [TRUNCATED] 
+
+> y <- c(2,4,6,8)
+
+> barplot(y,names.arg = x,col="red")
+
+> #names.arg define the type of bar charts
+> barplot(y,names.arg=x,density=10,col='blue')
+
+> #density -> to add texture to bar graph
+> barplot(y,names.arg=x,width=c(1,2,3,4),col='blue')
+
+> #width adds width to the each and every column in bar plot based on the parameters passed to it
+> barplot(y,names.arg=x,horiz=TRUE,col="orange")
+
+> # R statistics
+> #There is a popular built-in data set in R called "mtcars" (Motor Trend Car Road Tests), which is retrieved from the 1974 Motor Tre .... [TRUNCATED] 
+                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+
+> #info about mtcars
+>  ?mtcars
+
+> Data_cars <-mtcars
+
+> dim(Data_cars)  # dimensions of the  dataset.
+[1] 32 11
+
+> names(Data_cars) # to find  variables of cars from the datset
+ [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"   "am"  
+[10] "gear" "carb"
+
+> rownames(Data_cars) # name of each row in firstcolumn
+ [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"         
+ [4] "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"            
+ [7] "Duster 360"          "Merc 240D"           "Merc 230"           
+[10] "Merc 280"            "Merc 280C"           "Merc 450SE"         
+[13] "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood" 
+[16] "Lincoln Continental" "Chrysler Imperial"   "Fiat 128"           
+[19] "Honda Civic"         "Toyota Corolla"      "Toyota Corona"      
+[22] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"         
+[25] "Pontiac Firebird"    "Fiat X1-9"           "Porsche 914-2"      
+[28] "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"       
+[31] "Maserati Bora"       "Volvo 142E"         
+
+> Data_cars$cyl # use $ to acces columns from the Dataframe...
+ [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4
+
+> sort(Data_cars$cyl) # sorting the data
+ [1] 4 4 4 4 4 4 4 4 4 4 4 6 6 6 6 6 6 6 8 8 8 8 8 8 8 8 8 8 8 8 8 8
+
+> summary(Data_cars)
+      mpg             cyl             disp             hp       
+ Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+ 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+ Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+ Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+ 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+ Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+      drat             wt             qsec             vs        
+ Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+ 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+ Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+ Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+ 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+ Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+       am              gear            carb      
+ Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+ 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+ Median :0.0000   Median :4.000   Median :2.000  
+ Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+ 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+ Max.   :1.0000   Max.   :5.000   Max.   :8.000  
+
+> # R max and min
+> max(Data_cars$hp)
+[1] 335
+
+> min(Data_cars$hp)
+[1] 52
+
+> # we can use the which.max() and which.min() functions to find the index position of the max and min value in the table:
+> which.max(Data_cars$hp)
+[1] 31
+
+> which.min(Data_cars$hp)
+[1] 19
+
+> #combine which.max() and which.min() with the rownames() function 
+> #to get the name of the car with the largest and smallest horsepower:
+> rowname .... [TRUNCATED] 
+[1] "Maserati Bora"
+
+> rownames(Data_cars)[which.min(Data_cars$hp)]
+[1] "Honda Civic"
+
+> # mean of dataset
+> mean(Data_cars$wt)
+[1] 3.21725
+
+> median(Data_cars$wt)
+[1] 3.325
+
+> # to find mode 
+> names(sort(-table(Data_cars$wt)))[1]
+[1] "3.44"
+
+> # to find quantiles
+> quantile(Data_cars$wt, c(0.75))
+ 75% 
+3.61 
+
+> # running simply the quantile function can be more useful to know the 0,25,50,75,100 %
+> quantile(Data_cars$wt)
+     0%     25%     50%     75%    100% 
+1.51300 2.58125 3.32500 3.61000 5.42400 
+
+> # still there are many functions in R program for the mathematical computation of data and  derive insights from the data..
+> # happy learning R and .... [TRUNCATED] 
+> 
