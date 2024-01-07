@@ -717,3 +717,4 @@ quantile(Data_cars$wt, c(0.75))
 quantile(Data_cars$wt)
 # still there are many functions in R program for the mathematical computation of data and  derive insights from the data..
 # happy learning R and  its power is known...in computation...
+#   R programmmmm is powerful and more than 50% datascientists use this for statistical computation..
