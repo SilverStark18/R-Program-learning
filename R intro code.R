@@ -579,3 +579,55 @@ music_genre[0:-4]
 music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
 music_genre[3] <- "Pop"
 music_genre[3]
+#................../////////////////////...........................................................................................................................................
+#Plottingg
+#The plot() function is used to draw points (markers) in a diagram.
+#The function takes parameters for specifying points in the diagram.
+#Parameter 1 specifies points on the x-axis.
+#Parameter 2 specifies points on the y-axis.
+#...........................
+plot(1,3) #Rplot-1
+plot(c(1,8),c(3,10)) #Rplot-2 -plots --1,3 and 8,10
+plot(c(1,2,3,4,5),c(3,7,8,9,12)) #Rplot 3
+#another way of doing this..
+x <- c(1, 2, 3, 4, 5)
+y <- c(3, 7, 8, 9, 12)
+plot(x,y) # similar to Rplot3
+#Sequence of points
+plot(1:10) # Rplot4
+#plotting a line
+plot(1:10,type="l") #Rplot-5
+#adding the labelss
+plot(1:10,main="My Graph",xlab ="The x-axis",ylab="The y axis") #Rplot-6
+#Adding colors
+plot(1:10,col ="red") #Rplot-7
+#Use cex=number to change the size of the points (1 is default, while 0.5 means 50% smaller, and 2 means 100% larger):
+plot(1:10,cex=2) #Rplot-8
+#point Shape
+#Use pch with a value from 0 to 25 to change the point shape format:
+plot(1:10,pch=25,cex=2)#Rplot -9
+#pch have different values u can try different shapesss...
+#.................................................................................................................................
+#line graphs
+# we use parameter type =l for plottingg
+plot(1:10,type="l")#lineplots-1
+plot(1:10,type="l",col="blue")#lineplots-2
+plot(1:10,type="l",lwd=2)# lineplots-3
+#line stylesss
+plot(1:10,type="l",lwd=5,lty=3)
+
+#Available parameter values for lty:
+  
+# 0 removes the line
+# 1 displays a solid line
+# 2 displays a dashed line
+# 3 displays a dotted line
+# 4 displays a "dot dashed" line
+# 5 displays a "long dashed" line
+# 6 displays a "two dashed" line
+#.................................................................................
+# multiple lines 
+line1 <-c(1,2,3,4,5,6,7,6,7)
+line2 <-c(2,5,7,8,9,10,11,18)
+plot(line1,type="l",col ='blue')
+lines(line2,type="l",col = "red")
