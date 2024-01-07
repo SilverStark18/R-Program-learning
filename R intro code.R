@@ -693,3 +693,27 @@ rownames(Data_cars) # name of each row in firstcolumn
 Data_cars$cyl # use $ to acces columns from the Dataframe...
 sort(Data_cars$cyl) # sorting the data
 summary(Data_cars)
+ 
+# R max and min
+max(Data_cars$hp)
+min(Data_cars$hp)
+
+# we can use the which.max() and which.min() functions to find the index position of the max and min value in the table:
+which.max(Data_cars$hp)
+which.min(Data_cars$hp)
+
+#combine which.max() and which.min() with the rownames() function 
+#to get the name of the car with the largest and smallest horsepower:
+rownames(Data_cars)[which.max(Data_cars$hp)]  
+rownames(Data_cars)[which.min(Data_cars$hp)]
+# mean of dataset
+mean(Data_cars$wt)
+median(Data_cars$wt)
+# to find mode 
+names(sort(-table(Data_cars$wt)))[1]
+# to find quantiles
+quantile(Data_cars$wt, c(0.75))
+# running simply the quantile function can be more useful to know the 0,25,50,75,100 %
+quantile(Data_cars$wt)
+# still there are many functions in R program for the mathematical computation of data and  derive insights from the data..
+# happy learning R and  its power is known...in computation...
