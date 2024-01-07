@@ -631,3 +631,65 @@ line1 <-c(1,2,3,4,5,6,7,6,7)
 line2 <-c(2,5,7,8,9,10,11,18)
 plot(line1,type="l",col ='blue')
 lines(line2,type="l",col = "red")
+
+#.......................................................
+x <- c(5,7,8,7,2,2,9,4,11,12,9,6)
+y <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+
+plot(x, y,col="orange",main="Observation of Cars", xlab="Car age", ylab="Car speed")
+#......................................................................................................
+# compare the carsss
+# day one, the age and speed of 12 cars:
+x1 <- c(5,7,8,7,2,2,9,4,11,12,9,6)
+y1 <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+
+# day two, the age and speed of 15 cars:
+x2 <- c(2,2,8,1,15,8,12,9,7,3,11,4,7,14,12)
+y2 <- c(100,105,84,105,90,99,90,95,94,100,79,112,91,80,85)
+
+plot(x1, y1, main="Observation of Cars", xlab="Car age", ylab="Car speed", col="red", cex=2)
+points(x2, y2, col="blue", cex=2) # using points you are adding into same plotss..
+#pie charts
+x <-c(010,20,30,40)
+pie(x)
+# Create a vector of pies
+x <- c(10,20,30,40)
+
+# Display the pie chart and start the first pie at 90 degrees
+pie(x,init.angle=90)
+# labels
+x <-c(10,20,30,40)
+mylabel <- c("apples","banana",'cherries','dates')
+pie(x,label=mylabel,main = "fruits")
+#..................................................................
+# pie chart with colors
+colors <- c("red", "yellow", "pink", "brown")
+pie(x,label=mylabel,main="fruits",col=colors)
+#..................................................................
+#to display legend to explain the contents clearly .....
+legend("bottomright",mylabel,fill=colors)
+#The legend can be positioned as either:
+#bottomright, bottom, bottomleft, left, topleft, top, topright, right, center
+#..........................................................................................................
+x <- c('A','B','C',"D")
+y <- c(2,4,6,8)
+barplot(y,names.arg = x,col="red")
+#names.arg define the type of bar charts
+barplot(y,names.arg=x,density=10,col='blue')
+#density -> to add texture to bar graph
+barplot(y,names.arg=x,width=c(1,2,3,4),col='blue')
+#width adds width to the each and every column in bar plot based on the parameters passed to it
+barplot(y,names.arg=x,horiz=TRUE,col="orange")
+
+# R statistics
+#There is a popular built-in data set in R called "mtcars" (Motor Trend Car Road Tests), which is retrieved from the 1974 Motor Trend US Magazine.
+ mtcars
+#info about mtcars
+ ?mtcars
+Data_cars <-mtcars
+dim(Data_cars)  # dimensions of the  dataset.
+names(Data_cars) # to find  variables of cars from the datset
+rownames(Data_cars) # name of each row in firstcolumn
+Data_cars$cyl # use $ to acces columns from the Dataframe...
+sort(Data_cars$cyl) # sorting the data
+summary(Data_cars)
